@@ -1,0 +1,202 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](fg:#ffffff)\
+[👾](bg:#ffffff)\
+[](fg:#ffffff bg:color_purple)\
+$username\
+[ ](fg:color_purple)\
+[](fg:#ffffff)\
+[📂](bg:#ffffff)\
+[](fg:#ffffff bg:color_yellow)\
+$directory\
+[ ](fg:color_yellow)\
+[](fg:#ffffff)\
+[🌱](bg:#ffffff)\
+[](fg:#ffffff bg:color_aqua)\
+$git_branch\
+$git_status\
+[ ](fg:color_aqua)\
+[](fg:#ffffff)\
+[📦](bg:#ffffff fg:color_orange)\
+[](fg:#ffffff bg:color_orange)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[ ](fg:color_orange)\
+[](fg:#ffffff)\
+[🐬](bg:#ffffff)\
+[](fg:#ffffff bg:color_blue)\
+$docker_context\
+[ ](fg:color_blue)\
+[](fg:#ffffff)\
+[🚀](bg:#ffffff)\
+[](fg:#ffffff bg:color_red)\
+$cmd_duration\
+[ ](fg:color_red)
+$character
+"""
+
+palette = 'default'
+
+[palettes.gruvbox]
+color_fg0 = '#fbf1c7'
+color_fg1 = '#282828'
+color_bg1 = '#343434'
+color_bg3 = '#543B32'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#8EC07C'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#CC241D'
+color_yellow = '#D79921'
+
+[palettes.breeze]
+color_fg0 = '#deddda'
+color_fg1 = '#282828'
+color_bg1 = '#3C3836'
+color_bg3 = '#8F6152'
+color_blue = '#2980b9'
+color_aqua = '#689d6a'
+color_green = '#27ae60'
+color_orange = '#f67400'
+color_purple = '#926EE3'
+color_red = '#da4453'
+color_yellow = '#E8CB2D'
+
+[palettes.gnome]
+color_fg0 = '#ffffff'
+color_fg1 = '#282828'
+color_bg1 = '#3d3846'
+color_bg3 = '#865e3c'
+color_blue = '#1c71d8'
+color_aqua = '#689d6a'
+color_green = '#2ec27e'
+color_orange = '#e66100'
+color_purple = '#9E5EB8'
+color_red = '#c01c28'
+color_yellow = '#f5c211'
+
+[palettes.default]
+color_fg0 = '#ffffff'
+color_fg1 = '#282828'
+color_bg1 = '#3d3846'
+color_bg3 = '#865e3c'
+color_blue = '#0db7ed'
+color_aqua = '#9AC338'
+color_green = '#41FF00'
+color_orange = '#B48350'
+color_purple = '#7f3fbf'
+color_red = '#c01c28'
+color_yellow = '#FFE36C'
+
+[username]
+show_always = true
+style_user = "bg:color_purple fg:color_fg0"
+style_root = "bg:color_purple fg:color_fg0 bold"
+format = '[ $user ]($style)'
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+style = "fg:color_fg1 bg:color_yellow"
+format = "[ $path ]($style)"
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = "󰝚"
+"Pictures" = ""
+"Projects" = "󰲋"
+"Videos" = ""
+
+[git_branch]
+symbol = ""
+style = "fg:color_fg0 bg:color_aqua"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "fg:color_fg0 bg:color_aqua"
+format = '[($all_status$ahead_behind )]($style)'
+
+[nodejs]
+symbol = ""
+style = "fg:color_fg0 bg:color_orange"
+format = '[ $symbol( $version) ]($style)'
+
+[c]
+symbol = ""
+style = "fg:color_fg0 bg:color_orange"
+format = '[ $symbol( $version) ]($style)'
+
+[rust]
+symbol = ""
+style = "fg:color_fg0 bg:color_orange"
+format = '[ $symbol( $version) ]($style)'
+
+[golang]
+symbol = ""
+style = "fg:color_fg0 bg:color_orange"
+format = '[ $symbol( $version) ]($style)'
+
+[php]
+symbol = ""
+style = "fg:color_fg0 bg:color_orange"
+format = '[ $symbol( $version) ]($style)'
+
+[java]
+symbol = ""
+style = "fg:color_fg0 bg:color_orange"
+format = '[ $symbol( $version) ]($style)'
+
+[kotlin]
+symbol = ""
+style = "fg:color_fg0 bg:color_orange"
+format = '[ $symbol( $version) ]($style)'
+
+[haskell]
+symbol = ""
+style = "fg:color_fg0 bg:color_orange"
+format = '[ $symbol( $version) ]($style)'
+
+[python]
+symbol = ""
+style = "fg:color_fg0 bg:color_orange"
+format = '[ $symbol( $version) ]($style)'
+
+[docker_context]
+symbol = ""
+style = "fg:#83a598 bg:color_blue"
+format = '[ $symbol( $context) ]($style)'
+
+[time]
+disabled = true
+time_format = "%l:%M %p"
+style = "fg:color_fg0 bg:color_bg1"
+format = '[ $time ]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:color_green)'
+error_symbol = '[❯](bold fg:color_red)'
+vimcmd_symbol = '[❮](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:color_purple)'
+vimcmd_replace_symbol = '[❮](bold fg:color_purple)'
+vimcmd_visual_symbol = '[❮](bold fg:color_yellow)'
+
+[cmd_duration]
+disabled = false
+show_milliseconds = false
+min_time = 4
+style = "bg:color_red fg:#ffffff bold"
+format = "[ $duration ]($style)"
